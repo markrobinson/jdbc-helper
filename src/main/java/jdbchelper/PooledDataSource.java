@@ -4,7 +4,8 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.io.PrintWriter;
-
+import java.util.logging.Logger;
+import java.sql.SQLFeatureNotSupportedException;
 /**
  * User: erdinc
  * Date: 23-Nov-2009
@@ -53,5 +54,9 @@ public class PooledDataSource implements DataSource {
 
    public boolean isWrapperFor(Class<?> iface) throws SQLException {
       return false;
+   }
+   
+   public Logger getParentLogger() throws SQLFeatureNotSupportedException{
+     return null;
    }
 }

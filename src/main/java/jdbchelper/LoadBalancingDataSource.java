@@ -11,6 +11,8 @@ import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
+import java.sql.SQLFeatureNotSupportedException;
 
 /**
  * User: erdinc
@@ -180,4 +182,10 @@ public class LoadBalancingDataSource implements DataSource {
    public boolean isWrapperFor(Class<?> iface) throws SQLException {
       return false;
    }
+
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
