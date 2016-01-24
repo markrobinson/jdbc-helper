@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
+import java.sql.SQLFeatureNotSupportedException;
 
 /**
  * This is a simplest implementation of a java.sql.DataSource interface.
@@ -83,6 +85,10 @@ public class SimpleDataSource implements DataSource {
 
    public int getLoginTimeout() throws SQLException {
       return 0;
+   }
+   
+   public Logger getParentLogger() throws SQLFeatureNotSupportedException{
+     return null;
    }
 
    @SuppressWarnings("unchecked")
